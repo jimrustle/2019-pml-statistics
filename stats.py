@@ -61,6 +61,6 @@ print("Entropy: {}, expected: {}".format(sp.entropy(np.unique(winning_numbers, r
 # calculate chi-squared test (see https://www.cse.wustl.edu/~jain/cse567-08/ftp/k_27trg.pdf)
 # use 80 bins since it's close to the FD bin number, and divides 500e3 easily
 hist, _ = np.histogram(winning_numbers, bins=80)
-c2 = sp.chisquare(hist, np.ones(80)/(500.0e3 / 80.0))
+c2 = sp.chisquare(hist, np.ones(80)/(500.0e3 / 80.0) * 500.0e3)
 print("Chi-squared: {}".format(c2))
 
